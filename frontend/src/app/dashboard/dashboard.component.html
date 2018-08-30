@@ -1,0 +1,15 @@
+ <!-- Page-Title -->
+ <div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+
+            <h4 class="page-title">Movies</h4>
+        </div>
+    </div>
+</div>
+<!-- end page title end breadcrumb -->
+
+
+<movies-panel #trending id="trending" [section]="'trending'" (notifyToggleRecommend)='onNotifyToggleRecommend($event)'></movies-panel>
+<movies-panel #forthcoming id="forthcoming" [section]="'upcoming'" (notifyToggleRecommend)='onNotifyToggleRecommend($event)'></movies-panel>
+<movies-panel #recommendations id="recommendations" [section]="'recommendations'" (notifyToggleRecommend)='onNotifyToggleRecommend($event)'></movies-panel>

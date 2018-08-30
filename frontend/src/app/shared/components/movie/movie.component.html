@@ -1,0 +1,44 @@
+<!-- Card-Title -->
+<div class="row">
+  <div class="col-sm-12">
+    <h4 class="header-title mt-0 mb-3">{{getTitle()}}</h4>
+  </div>
+</div>
+
+<div class="row">
+  <p *ngIf="!movies && error==''">Loading...</p>
+  <div class="alert alert-warning" *ngIf="error">
+    {{error}}
+  </div>
+  <p *ngIf="movies && movies.length==0" id="no-movies">No movies found</p>
+
+  <div class="prev">
+    <button class="btn noshadow" [disabled]="i==0" (click)="prev()">
+      <i class="mdi mdi-arrow-left-drop-circle-outline mdi-36px"></i>
+    </button>
+  </div>
+  <div class="col-md-6 col-lg-2" *ngFor="let movie of movies | slice:i:i+6">
+
+    <!-- Simple card -->
+    <div class="card m-b-30">
+      <img *ngIf="movie.backdrop_path" class="card-img-top img-fluid" src="https://image.tmdb.org/t/p/w185{{movie.backdrop_path}}"
+        alt="No preview">
+      <img *ngIf="!movie.backdrop_path" class="card-img-top img-fluid" src="assets/images/small/img-1.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{movie.title}}</h5>
+        <p class="card-text">{{movie.overview}}</p>
+        <button class="btn btn-outline-custom btn-rounded waves-light waves-effect" type="button" (click)="toggleRecommend(movie)">
+            <i class="mdi {{movie.recommended ? 'mdi-thumb-down-outline' : 'mdi-thumb-up-outline'}}"></i> {{movie.recommended ? "Unrecommend" : "Recommend"}}
+        </button>       
+      </div>
+    </div>
+
+  </div>
+
+  <div class="next">
+    <button class="btn noshadow" [disabled]="hasMore()" (click)="next()">
+      <i class="mdi mdi-arrow-right-drop-circle-outline mdi-36px"></i>
+    </button>
+  </div>
+
+</div>

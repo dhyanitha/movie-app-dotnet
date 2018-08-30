@@ -1,0 +1,22 @@
+version: '3'
+services:
+  server:
+    image: "movieapi"
+    ports:
+      - "8089:80"
+    depends_on:
+      - db
+    environment:
+      connectionString: "Data Source=172.20.141.248;Initial Catalog=moviesDb;Integrated Security=False;User Id=sa, Password=P@ssw0rd"                
+    
+  db:
+    image: microsoft/mssql-server-windows-express
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "P@ssw0rd"
+      ACCEPT_EULA: "Y"
+  angular-app:
+    image: movie-app
+    ports:
+      - "4200:4200

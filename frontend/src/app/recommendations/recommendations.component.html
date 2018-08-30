@@ -1,0 +1,46 @@
+<!-- Page-Title -->
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h4 class="page-title">Movie Search</h4>
+        </div>
+    </div>
+</div>
+<!-- end page title end breadcrumb -->
+
+<div class="row">
+    <div class="col-12">
+        <div class="card-box">
+            <div class="row">
+                <div class="col-12">
+                    <div class="p-20">
+
+                        <div class="form-group row">
+                            <div class="input-group col-md-12 col-lg-10">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-light dropdown-toggle" #searchButton id="search-button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">By {{searchBy}}</button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item active" (click)="searchBy='Movie'">Search by movie</a>
+                                        <a class="dropdown-item" (click)="searchBy='Director'">Search by director</a>
+                                    </div>
+                                </div>
+                                <input type="text" class="form-control" type="search" placeholder="Search" #searchTextField id="search-text-field" (keyup)="search(searchTextField.value)">
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- end row -->
+
+        </div>
+        <!-- end card-box -->
+    </div>
+    <!-- end col -->
+</div>
+<!-- end row -->
+
+<movies-panel #searchResults id="search-results" *ngIf="searchTextField.value" [section]="'search'" [movies]="movies$ | async " (notifyToggleRecommend)='onNotifyToggleRecommend($event)'></movies-panel>
+<movies-panel #recommendations id="recommendations" [section]="'recommended'" (notifyToggleRecommend)='onNotifyToggleRecommend($event)'></movies-panel>

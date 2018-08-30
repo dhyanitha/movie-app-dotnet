@@ -1,0 +1,39 @@
+
+.prev .btn, .next .btn {
+    color: #02a8b5;
+    background-color: transparent;
+    padding-top: 100px;
+    border: none;
+}
+
+.btn.noshadow {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	}
+.prev, .next {
+    position: absolute;
+    z-index: 1;
+}
+.next {
+    right: 0px;
+}
+.prev{
+    left:0px;
+}
+.card-body { min-height: 200px;max-height: 400px; }
+
+.card-text {
+    display: block; /* Fallback for non-webkit */
+    display: -webkit-box;
+    max-width: 400px;
+    max-height: 200px; /* Fallback for non-webkit */
+    margin: 0 auto;
+    line-height: 1.4;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 5px;
+    min-height: 200px
+  }

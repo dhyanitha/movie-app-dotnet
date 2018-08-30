@@ -1,0 +1,71 @@
+<!-- Navigation Bar-->
+<header id="topnav">
+  <div class="topbar-main">
+    <div class="container-fluid">
+
+      <!-- Logo container-->
+      <div class="logo">
+        <!-- Text Logo -->
+        <a href="index.html" class="logo">
+          <span class="logo-small">
+            <i class="mdi mdi-movie mdi-36px"></i>
+          </span>
+          <span class="logo-large">
+            <i class="mdi mdi-movie mdi-48px"></i> Movie Cruiser</span>
+        </a>
+      </div>
+      <!-- End Logo container-->
+
+
+      <div class="menu-extras topbar-custom">
+
+        <ul class="list-unstyled topbar-right-menu float-right mb-0">
+
+          <li class="menu-item">
+            <!-- Mobile menu toggle-->
+            <a class="navbar-toggle nav-link" (click)="onClick($event.target)">
+              <div class="lines">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </a>
+            <!-- End mobile menu toggle-->
+          </li>
+
+        </ul>
+      </div>
+      <!-- end menu-extras -->
+
+      <div class="clearfix"></div>
+
+    </div>
+    <!-- end container -->
+  </div>
+  <!-- end topbar-main -->
+
+  <div class="navbar-custom">
+    <div class="container-fluid">
+      <div id="navigation">
+        <!-- Navigation Menu-->
+        <ul class="navigation-menu">
+
+          <li class="has-submenu" [routerLinkActive]="['active']">
+            <a [routerLinkActive]="['active']" routerLink="/dashboard">
+              <i class="icon-speedometer"></i>Dashboard</a>
+          </li>         
+          <li class="has-submenu" [routerLinkActive]="['active']">
+            <a [routerLinkActive]="['active']" routerLink="/recommendations">
+              <i class="icon-magnifier"></i>Recommendations</a>
+          </li>
+
+        </ul>
+        <!-- End navigation menu -->
+      </div>
+      <!-- end #navigation -->
+    </div>
+    <!-- end container -->
+  </div>
+  <!-- end navbar-custom -->
+</header>
+<!-- End Navigation Bar-->
